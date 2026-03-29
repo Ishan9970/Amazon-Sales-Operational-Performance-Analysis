@@ -8,99 +8,132 @@
 
 ## 📊 Project Overview
 
-This project analyzes Amazon India fashion sales data to identify:
+This project analyses Amazon India fashion sales data to identify:
 
-- Revenue drivers
-- Operational performance trends
-- Category concentration risk
-- Geographic revenue clustering
+- Key revenue drivers  
+- Operational performance trends  
+- Category concentration risk  
+- Geographic revenue clustering  
 
-The objective was not just to report totals, but to understand **what is actually driving revenue performance**.
+The focus is not just on reporting metrics, but on **quantifying what drives revenue performance** using structured analytical methods.
 
 The workflow combines:
 
 - **SQL** for data validation and aggregation  
-- **Python** for analytical decomposition and correlation analysis  
-- **Power BI** for executive-level dashboard visualization  
+- **Python** for decomposition analysis and demand insights  
+- **Power BI** for executive-level dashboard visualisation  
 
 ---
 
 ## 🗂 Dataset Summary
 
-- Total Revenue: ₹71M  
-- Total Orders: ~100K  
-- Total Units Sold: 108K  
-- Average Order Value (AOV): ₹711  
-- Units per Order: 1.08  
+- **Total Revenue:** ₹71M  
+- **Total Orders:** ~100K  
+- **Total Units Sold:** ~108K  
+- **Average Order Value (AOV):** ₹711  
+- **Units per Order:** ~1.08  
 
-Data Period: March 2022 – June 2022  
+**Data Period:** March 2022 – June 2022  
 
 ---
 
 ## 🔍 Key Business Insights
 
-### 1️⃣ Revenue Is Order-Driven
+### 1️⃣ Revenue Decline Was Driven by Order Contraction
 
-Revenue decline from April to June was primarily caused by a drop in **order volume**, not pricing.
+Revenue declined by **~21% from April to June**, primarily driven by a **~25% drop in order volume**.
 
-Revenue = Orders × Units per Order × Price
+A decomposition of revenue shows:
 
-- Units per order remained stable
-- Average price slightly increased
-- Orders declined significantly
+- **Order volume contributed >120% of the decline**
+- **AOV increased (~6%) and offset ~21% of the loss**
 
-Conclusion:
-Revenue movement was **volume-driven**, not price-driven.
+This confirms that the decline was **volume-driven, not price-driven**.
 
 ---
 
-### 2️⃣ Category Concentration Risk
+### 2️⃣ Revenue Is Highly Concentrated
 
-Revenue is heavily concentrated in:
+Revenue is heavily concentrated in a few categories:
 
-- **Set**
-- **Kurta**
+- **Set → ~50%**
+- **Kurta → ~27%**
 
-These two categories contribute the majority of revenue.
+Combined:
 
-Business Risk:
-High dependency on limited product segments.
+- **Top 2 categories → ~77% of total revenue**
+- **Top 3 categories → >91% of total revenue**
+
+**Business Risk:**  
+High dependency on a narrow product portfolio increases vulnerability to demand shifts.
 
 ---
 
-### 3️⃣ Geographic Revenue Clustering
+### 3️⃣ Demand Is Category-Driven, Not Price-Driven
 
-Top Revenue States:
+- No strong linear relationship between **price and quantity** at transaction level  
+- High-priced categories (e.g., Set) still generate the highest demand  
+- Low-priced categories do not necessarily drive higher volume  
 
-- Maharashtra
-- Karnataka
-- Telangana
-- Uttar Pradesh
-- Tamil Nadu
+**Conclusion:**  
+Customer purchase decisions are driven more by **product category and perceived value** than by price variation.
 
-Revenue is concentrated in western and southern regions of India.
+---
 
-Business Implication:
-Urban, high purchasing power markets dominate revenue.
+### 4️⃣ Basket Size Is Stable
+
+- Units per order remain stable at **~1.07–1.08**
+
+**Implication:**  
+- Customers typically purchase **single items per transaction**  
+- Limited cross-selling and bundling behaviour  
+
+---
+
+### 5️⃣ Revenue Is Driven by Customer Traffic
+
+Since revenue decline is fully explained by reduced order volume while:
+
+- AOV increased  
+- Units per order remained stable  
+
+👉 Business performance is primarily driven by **traffic and conversion**, not pricing strategy.
+
+---
+
+### 6️⃣ Revenue Is Geographically Concentrated
+
+Top contributing states:
+
+- Maharashtra  
+- Karnataka  
+- Telangana  
+- Uttar Pradesh  
+- Tamil Nadu  
+
+👉 **Top 5 states contribute ~56% of total revenue**
+
+**Implication:**  
+Revenue is concentrated in **high-value, urban markets**, indicating both growth opportunity and regional dependency risk.
 
 ---
 
 ## 📈 Dashboard Preview
 
 ### KPI Overview
-- Total Revenue
-- Total Orders
-- Units per Order
-- Average Order Value
-- Total Units
+- Total Revenue  
+- Total Orders  
+- Units per Order  
+- Average Order Value  
+- Total Units  
 
 ### Trend Analysis
-- Monthly Revenue Trend
-- Monthly Orders Trend
+- Monthly Revenue Trend  
+- Monthly Orders Trend  
 
 ### Driver Analysis
-- Revenue by Category
-- Revenue by State (Map + Top 5 Table)
+- Revenue by Category  
+- Revenue by State (Map + Top 5 Table)  
 
 ![Dashboard Screenshot](dashboard.png)
 
@@ -109,34 +142,79 @@ Urban, high purchasing power markets dominate revenue.
 ## 🛠 Technical Workflow
 
 ### 1️⃣ SQL Layer
-- Data cleaning
-- Duplicate validation
-- Revenue aggregation
-- Order-level metrics
-- Category and state-level grouping
+- Data cleaning and validation  
+- Handling zero/negative transactions  
+- Revenue aggregation  
+- Order-level metric computation  
+- Category and state-level grouping  
+
+---
 
 ### 2️⃣ Python Layer
-- Feature engineering
-- Price per unit calculation
-- Correlation analysis
-- Revenue decomposition
-- Trend visualization
+- Feature engineering (price per unit, time features)  
+- Revenue decomposition (**Orders vs AOV contribution**)  
+- Correlation and demand analysis  
+- Category-level and geographic analysis  
+- Trend visualisation  
+
+---
 
 ### 3️⃣ Power BI Layer
-- KPI card modeling
-- Revenue & order trend dashboards
-- Category driver visualization
-- Geographic revenue mapping
-- Executive layout structuring
+- KPI card modelling  
+- Monthly performance dashboards  
+- Category concentration visuals  
+- Geographic revenue mapping  
+- Executive-level layout design  
 
 ---
 
 ## 💡 Business Recommendations
 
-- Focus on increasing order volume through marketing campaigns.
-- Diversify category mix to reduce concentration risk.
-- Expand targeting in high-performing states.
-- Monitor monthly order decline closely to prevent sustained revenue drops.
+### 1. Prioritise Order Growth
+
+Reverse the **~25% decline in order volume** through:
+
+- Targeted customer acquisition campaigns  
+- Improved platform visibility  
+- Retention and repeat purchase strategies  
+
+---
+
+### 2. Reduce Category Concentration Risk
+
+With **~77% revenue from top 2 categories**, focus on:
+
+- Scaling mid-tier categories (Western Dress, Top)  
+- Expanding product assortment  
+- Running targeted category campaigns  
+
+---
+
+### 3. Improve Cross-Selling and Basket Size
+
+Increase units per order (~1.07) through:
+
+- Product bundling strategies  
+- Personalised recommendations  
+- Multi-item offers  
+
+---
+
+### 4. Optimise Traffic and Conversion
+
+Since revenue is traffic-driven:
+
+- Improve product listings and UX  
+- Target high-intent customers  
+- Focus on conversion optimisation rather than aggressive discounting  
+
+---
+
+### 5. Implement Order Trend Monitoring
+
+- Track monthly order trends  
+- Set threshold-based alerts  
+- Enable early intervention before revenue decline accelerates  
 
 ---
 
@@ -144,8 +222,8 @@ Urban, high purchasing power markets dominate revenue.
 
 This project demonstrates the ability to:
 
-- Perform end-to-end data analysis
-- Decompose revenue drivers
-- Translate analytics into business insights
-- Build executive-level BI dashboards
-
+- Perform end-to-end data analysis using SQL, Python, and Power BI  
+- Quantitatively decompose revenue drivers  
+- Translate data into actionable business insights  
+- Identify structural risks in category and geographic concentration  
+- Build executive-level dashboards for decision-making  
